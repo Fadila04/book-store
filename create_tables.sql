@@ -13,6 +13,12 @@ CREATE TABLE author (
 );
 
 CREATE TABLE book (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    publication_date DATE NOT NULL,
+    theme INT UNIQUE NOT NULL,
+    stock INT NOT NULL,
 );
 
 CREATE TABLE customer (
@@ -32,4 +38,10 @@ CREATE TABLE customer_order (
 );
 
 CREATE TABLE review (
+    review_id INT PRIMARY KEY,
+    customer INT NOT NULL,
+    book INT NOT NULL,
+    note INT,
+    notice VARCHAR (255),
+    notice_date DATE,
 );
